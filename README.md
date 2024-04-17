@@ -9,7 +9,9 @@ Currently, it's using React and Typescript:
 ## Useful Commands
 
 Update `npm` to version 16.x and above, it's necessary for running the react template.
-To fetch react template, we can use `npm create vite@latest` command. And choose `TypeScript` variant.
+
+- `npm create vite@latest` To fetch react template, we can use command. And choose `TypeScript` variant.
+- `npm run dev` to test out native web app.
 
 ## Expanding the ESLint configuration
 
