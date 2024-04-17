@@ -6,6 +6,11 @@ Currently, it's using React and Typescript:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 
+## Useful Commands
+
+Update `npm` to version 16.x and above, it's necessary for running the react template.
+To fetch react template, we can use `npm create vite@latest` command. And choose `TypeScript` variant.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
