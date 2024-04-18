@@ -1,19 +1,11 @@
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 function App() {
-  let items = ["Skyrim", "BioShock", "Prey", "Deus Ex", "Ultima"];
-
-  const handleSelectedItem = (item: string) => {
-    console.log(item);
-  };
-
   return (
     <div>
-      <ListGroup
-        items={items}
-        heading="Games"
-        onSelectedItem={handleSelectedItem}
-      />
+      <Alert>
+        Hello <span>World</span>
+      </Alert>
     </div>
   );
 }
