@@ -1,4 +1,4 @@
-namespace game_ranking.Server
+namespace game_ranking_app.Server
 {
     public class WeatherForecast
     {

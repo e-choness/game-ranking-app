@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace game_ranking.Server.Controllers
+namespace game_ranking_app.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

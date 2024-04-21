@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>game_ranking.Server</RootNamespace>
-    <SpaRoot>..\game-ranking.client</SpaRoot>
+    <RootNamespace>game_ranking_app.Server</RootNamespace>
+    <SpaRoot>..\game-ranking-app.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:5173</SpaProxyServerUrl>
   </PropertyGroup>
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\game-ranking.client\game-ranking.client.esproj">
+    <ProjectReference Include="..\game-ranking-app.client\game-ranking-app.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
