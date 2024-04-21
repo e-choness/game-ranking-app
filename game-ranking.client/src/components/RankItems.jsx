@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from "react";
 import GameCovers from "@/components/GameCovers.jsx";
+import "@/css/ranking.css";
 
 const RankItems = () => {
   const [items, setItems] = useState([]);
@@ -18,10 +19,8 @@ const RankItems = () => {
   return (
     <main>
       <div className="items-not-ranked">
-        {items.length === 0 ? (
-          <div>Loading...</div>
-        ) : (
-          <div>
+        {items.length > 0 ? (
+          <div className="unranked-cell">
             {items.map((item) => (
               <img
                 id={`item-${item.imageId}`}
@@ -29,6 +28,8 @@ const RankItems = () => {
               />
             ))}
           </div>
+        ) : (
+          <div>Loading...</div>
         )}
       </div>
     </main>
