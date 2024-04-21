@@ -1,26 +1,38 @@
-﻿import React, {useState, useEffect} from "react";
+﻿import React, { useState, useEffect } from "react";
+import GameCovers from "@/components/GameCovers.jsx";
 
-const RankItems = ()=>{
-    const [items, setItems] = useState([])
-    const dataType = 1;
+const RankItems = () => {
+  const [items, setItems] = useState([]);
+  const dataType = 1;
 
-    useEffect(() => {
-        fetch('item/' + {dataType})
-            .then(results=> results.json())
-            .then(data=> setItems(data))
-    }, []);
-    
-    return(
-        <main>
-            {
-            (items.length === 0)?
-            <div>Loading...</div> :
-            <div>
-                {items.map(item=> <h3 key={item.id}>{item.title}</h3>)}
-            </div>
-            }
-        </main>
-    );
-}
+  useEffect(() => {
+    fetch(`item/${dataType}`)
+      .then((results) => results.json())
+      .then((data) => setItems(data));
+  }, []);
 
-export default RankItems
+  function PrintConsole(i) {
+    console.log(i);
+  }
+
+  return (
+    <main>
+      <div className="items-not-ranked">
+        {items.length === 0 ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
+            {items.map((item) => (
+              <img
+                id={`item-${item.imageId}`}
+                src={GameCovers.find((gc) => gc.id === item.imageId).image}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </main>
+  );
+};
+
+export default RankItems;
