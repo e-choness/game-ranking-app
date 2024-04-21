@@ -5,9 +5,8 @@ namespace game_ranking.Server.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ItemController : ControllerBase
+public class ItemController
 {
-
     private static readonly IEnumerable<ItemModel> Items = new[]
     {
         new ItemModel() { Id = 1, Title = "Skyrim", ImageId = 1, Ranking = 0, ItemType = 1 },
@@ -23,9 +22,8 @@ public class ItemController : ControllerBase
     };
 
     [HttpGet("{type:int}")]
-    public ItemModel[] Get(int type)
+    public IEnumerable<ItemModel> Get(int type = 1)
     {
         return Items.Where(item => item.ItemType == type).ToArray();
     }
-
 }
