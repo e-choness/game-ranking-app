@@ -1,5 +1,6 @@
 ﻿import React, { useState, useEffect } from "react";
 import GameCovers from "@/components/GameCovers.jsx";
+import RankingGrid from "./RankingGrid";
 import "@/css/ranking.css";
 
 const RankItems = () => {
@@ -12,12 +13,9 @@ const RankItems = () => {
       .then((data) => setItems(data));
   }, []);
 
-  function PrintConsole(i) {
-    console.log(i);
-  }
-
   return (
     <main>
+      <RankingGrid items={items} images={GameCovers} />
       <div className="items-not-ranked">
         {items.length > 0 ? (
           <div className="unranked-cell">
