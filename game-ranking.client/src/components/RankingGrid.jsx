@@ -1,4 +1,5 @@
-const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
+// const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
+const RankingGrid = ({ items, images }) => {
   const rankingGrid = [];
   const cellCollectionA = [];
   const cellCollectionB = [];
@@ -6,45 +7,30 @@ const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
   const cellCollectionD = [];
 
   function populateCellCollection(cellCollection, label, rankNumber) {
-    const markUp = <div></div>;
+    var markUp = <div></div>;
     if (rankNumber > 0) {
       var item = items.find((i) => i.ranking === rankNumber);
-      markUp = (
-        <div
-          id={`rank-${rankNumber}`}
-          onDrop={onDrop}
-          onDragOver={onDragOver}
-          className="rank-cell"
-        >
-          {item != null ? (
-            <img
-              id={`item-${item.id}`}
-              src={images.find((img) => img.id === item.imageId)?.image}
-              draggable="true"
-              onDragStart={onDragStart}
-            />
-          ) : null}
-        </div>
-      );
+      markUp = <div id={`rank-${rankNumber}`} className="rank-cell"></div>;
     } else {
       markUp = (
         <div className="row-label">
-          <h4>{label}</h4>
+          <h4 id={`label-${rankNumber}`}>{label}</h4>
         </div>
       );
     }
+    console.log(markUp);
     cellCollection.push(markUp);
   }
 
-  function createCellsForRows(row) {
-    const rankNumber = 0;
-    const currentCollection = [];
-    const label = "";
+  function createCellsForRow(rowNumber) {
+    var rankNumber = 0;
+    var currentCollection = [];
+    var label = "";
     const cellNumber = 5;
-    for (var i = 0; i < cellNumber; i++) {
-      rankNumber = cellNumber * row + i - row + 1;
 
-      switch (row) {
+    for (var i = 0; i < cellNumber; i++) {
+      rankNumber = i === 0 ? 0 : cellNumber * rowNumber + i - rowNumber + 1;
+      switch (rowNumber) {
         case 0:
           currentCollection = cellCollectionA;
           label = "A Tier";
@@ -71,8 +57,9 @@ const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
 
   function createCellsForRows() {
     const maxRows = 4;
-    for (var row = 0; row < maxRows; row++) {
-      createCellsForRows(row);
+    var row = 0;
+    for (row = 0; row < maxRows; row++) {
+      createCellsForRow(row);
     }
   }
 
@@ -90,3 +77,5 @@ const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
   }
   return <div className="rankings">{createRankingGrid()}</div>;
 };
+
+export default RankingGrid;

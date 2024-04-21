@@ -42,3 +42,41 @@ main {
   max-width: 100%;
   height: auto;
 }
+
+.rankings {
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-self: center;
+  margin-bottom: 15px;
+}
+
+.rank-row {
+  display: flex;
+  height: 100px;
+  justify-content: space-evenly;
+  margin-top: 3px;
+  margin-bottom: 4px;
+}
+
+.row-label {
+  display: flex;
+  text-align: center;
+}
+
+.a-tier {
+  background-color: #e01a76;
+}
+
+.b-tier {
+  background-color: tomato;
+}
+
+.c-tier {
+  background-color: forestgreen;
+}
+
+.d-tier {
+  background-color: cornflowerblue;
+}
