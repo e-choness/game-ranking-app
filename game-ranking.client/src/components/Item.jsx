@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = (item, images, onDragStart) => {
+const Item = ({ item, images, onDragStart }) => {
   return (
     <div className="unranked-cell">
       {

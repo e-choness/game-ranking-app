@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from "react";
 import GameCovers from "@/components/GameCovers.jsx";
 import RankingGrid from "./RankingGrid";
+import ItemCollection from "./ItemCollection";
 import "@/css/ranking.css";
 
 const RankItems = () => {
@@ -52,19 +53,11 @@ const RankItems = () => {
       />
       <div className="items-not-ranked">
         {items.length > 0 ? (
-          <div className="unranked-cell">
-            {items.map((item) =>
-              item.ranking === 0 ? (
-                <img
-                  id={`item-${item.imageId}`}
-                  src={GameCovers.find((gc) => gc.id === item.imageId)?.image}
-                  style={{ cursor: "pointer" }}
-                  draggable="true"
-                  onDragStart={onDragStart}
-                />
-              ) : null
-            )}
-          </div>
+          <ItemCollection
+            items={items}
+            images={GameCovers}
+            onDragStart={onDragStart}
+          ></ItemCollection>
         ) : (
           <div>Loading...</div>
         )}
