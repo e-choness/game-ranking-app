@@ -8,6 +8,10 @@ const RankItems = () => {
   const [items, setItems] = useState([]);
   const dataType = 1;
 
+  const [reload, setReload] = useState(false);
+
+  const localStorageKey = "rpg";
+
   function onDragStart(event) {
     event.dataTransfer.setData("text", event.target.id);
     console.log("onDragStart() target id: " + event.target.id);
@@ -36,13 +40,34 @@ const RankItems = () => {
     }
   }
 
-  useEffect(() => {
+  function getDataFromServer() {
     fetch(`item/${dataType}`)
       .then((results) => results.json())
       .then((data) => setItems(data));
-  }, []);
+  }
 
-  return (
+  useEffect(() => {
+    if (items == null) getDataFromServer();
+  }, [dataType]);
+
+  function OnClickReload() {
+    setReload(true);
+  }
+
+  useEffect(() => {
+    if (items != null) {
+      localStorage.setItem(localStorageKey, JSON.stringify(items));
+    }
+    setReload(false);
+  }, [items]);
+
+  useEffect(() => {
+    if (reload == true) {
+      getDataFromServer();
+    }
+  }, [reload]);
+
+  return items != null ? (
     <main>
       <RankingGrid
         items={items}
@@ -51,18 +76,17 @@ const RankItems = () => {
         onDragOver={OnDragOver}
         onDragStart={onDragStart}
       />
-      <div className="items-not-ranked">
-        {items.length > 0 ? (
-          <ItemCollection
-            items={items}
-            images={GameCovers}
-            onDragStart={onDragStart}
-          ></ItemCollection>
-        ) : (
-          <div>Loading...</div>
-        )}
-      </div>
+      <ItemCollection
+        items={items}
+        images={GameCovers}
+        onDragStart={onDragStart}
+      ></ItemCollection>
+      <button className="button-reload" onClick={OnClickReload}>
+        <span className="text">Reload</span>
+      </button>
     </main>
+  ) : (
+    <main>Loading...</main>
   );
 };
 
