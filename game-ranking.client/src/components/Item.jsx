@@ -1,17 +1,16 @@
 import React from "react";
 
-const Item = ({ item, images, onDragStart }) => {
+const Item = ({ item, imgObj, onDragStart }) => {
   return (
     <div className="unranked-cell">
-      {
-        <img
-          id={`item-${item.id}`}
-          src={images.find((img) => img.id === item.imageId)?.image}
-          style={{ cursor: "pointer" }}
-          draggable="true"
-          onDragStart={onDragStart}
-        />
-      }
+      <img
+        key={`item-${item.id}`}
+        id={`item-${item.id}`}
+        src={imgObj?.image}
+        style={{ cursor: "pointer" }}
+        draggable="true"
+        onDragStart={onDragStart}
+      />
     </div>
   );
 };

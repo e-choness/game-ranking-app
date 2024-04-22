@@ -9,7 +9,7 @@ const ItemCollection = ({ items, images, onDragStart }) => {
           <Item
             key={`item-${item.id}`}
             item={item}
-            images={images}
+            imgObj={images.find((img) => img.id === item.imageId)}
             onDragStart={onDragStart}
           />
         ) : null
