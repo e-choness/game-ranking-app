@@ -41,7 +41,7 @@ const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
     var rankNumber = 0;
     var currentCollection = [];
     var label = "";
-    const cellNumber = 5;
+    const cellNumber = 6;
 
     for (var i = 0; i < cellNumber; i++) {
       rankNumber = i === 0 ? 0 : cellNumber * rowNumber + i - rowNumber;
