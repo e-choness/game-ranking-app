@@ -33,14 +33,16 @@ main {
 }
 
 .unranked-cell {
-  width: 90px;
+  width: 120px;
   text-align: center;
   margin-left: 3px;
 }
 
-.unranked-cell img {
+.unranked-cell img,
+.rank-cell img {
   max-width: 100%;
   height: auto;
+  aspect-ratio: 0.68;
 }
 
 .rankings {
@@ -54,15 +56,18 @@ main {
 
 .rank-row {
   display: flex;
-  height: 100px;
+  height: 200px;
   justify-content: space-evenly;
   margin-top: 3px;
   margin-bottom: 4px;
 }
 
-.row-label {
+.row-label,
+.rank-cell {
   display: flex;
+  width: 120px;
   text-align: center;
+  align-items: center;
 }
 
 .a-tier {

@@ -53,15 +53,17 @@ const RankItems = () => {
       <div className="items-not-ranked">
         {items.length > 0 ? (
           <div className="unranked-cell">
-            {items.map((item) => (
-              <img
-                id={`item-${item.imageId}`}
-                src={GameCovers.find((gc) => gc.id === item.imageId)?.image}
-                style={{ cursor: "pointer" }}
-                draggable="true"
-                onDragStart={onDragStart}
-              />
-            ))}
+            {items.map((item) =>
+              item.ranking === 0 ? (
+                <img
+                  id={`item-${item.imageId}`}
+                  src={GameCovers.find((gc) => gc.id === item.imageId)?.image}
+                  style={{ cursor: "pointer" }}
+                  draggable="true"
+                  onDragStart={onDragStart}
+                />
+              ) : null
+            )}
           </div>
         ) : (
           <div>Loading...</div>
