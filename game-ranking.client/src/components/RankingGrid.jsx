@@ -1,5 +1,5 @@
-// const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
-const RankingGrid = ({ items, images }) => {
+const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
+  // const RankingGrid = ({ items, images }) => {
   const rankingGrid = [];
   const cellCollectionA = [];
   const cellCollectionB = [];
@@ -10,15 +10,30 @@ const RankingGrid = ({ items, images }) => {
     var markUp = <div></div>;
     if (rankNumber > 0) {
       var item = items.find((i) => i.ranking === rankNumber);
-      markUp = <div id={`rank-${rankNumber}`} className="rank-cell"></div>;
+      markUp = (
+        <div
+          id={`rank-${rankNumber}`}
+          className="rank-cell"
+          onDrop={onDrop}
+          onDragOver={onDragOver}
+        >
+          {item != null ? (
+            <img
+              id={`item-${item.id}`}
+              src={images.find((img) => img.id === item.imageId)?.image}
+              draggable="true"
+              onDragStart={onDragStart}
+            />
+          ) : null}
+        </div>
+      );
     } else {
       markUp = (
         <div className="row-label">
-          <h4 id={`label-${rankNumber}`}>{label}</h4>
+          <h4>{label}</h4>
         </div>
       );
     }
-    console.log(markUp);
     cellCollection.push(markUp);
   }
 
@@ -29,7 +44,7 @@ const RankingGrid = ({ items, images }) => {
     const cellNumber = 5;
 
     for (var i = 0; i < cellNumber; i++) {
-      rankNumber = i === 0 ? 0 : cellNumber * rowNumber + i - rowNumber + 1;
+      rankNumber = i === 0 ? 0 : cellNumber * rowNumber + i - rowNumber;
       switch (rowNumber) {
         case 0:
           currentCollection = cellCollectionA;
