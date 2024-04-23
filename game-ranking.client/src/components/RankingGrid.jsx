@@ -48,19 +48,19 @@ const RankingGrid = ({ items, images, onDrop, onDragOver, onDragStart }) => {
       switch (rowNumber) {
         case 0:
           currentCollection = cellCollectionA;
-          label = "A Tier";
+          label = "Love The Setting";
           break;
         case 1:
           currentCollection = cellCollectionB;
-          label = "B Tier";
+          label = "Love The Grapics";
           break;
         case 2:
           currentCollection = cellCollectionC;
-          label = "C Tier";
+          label = "Love The Story";
           break;
         case 3:
           currentCollection = cellCollectionD;
-          label = "D Tier";
+          label = "Love The Gameplay";
           break;
         default:
           break;

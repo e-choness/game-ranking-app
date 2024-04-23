@@ -69,6 +69,7 @@ const RankItems = () => {
 
   return items != null ? (
     <main>
+      <div className="h1">What Do you Love About These Games?</div>
       <RankingGrid
         items={items}
         images={GameCovers}
