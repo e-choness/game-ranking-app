@@ -11,7 +11,6 @@ This is a game ranking app based on React JS. A hobby and a code along project o
 Update `npm` to version 16.x and above, it's necessary for running the react template.
 Navigate to `game-ranking.cient` to run these commands.
 
-- `npm create vite@latest` To fetch react template, we can use command. And choose `TypeScript` variant.
 - `npm run dev` to test out native web app.
 
 ### Server
