@@ -1,36 +1,29 @@
 # Game Ranking App
 
-This is a game ranking app based on React. A hobby project of mine.
+This is a game ranking app based on React JS. A hobby and a code along project of mine.
 
-Currently, it's using React and Typescript:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+![What do you love about the game](/readme-img/game-ranking.gif)
 
 ## Useful Commands
 
+### Client
+
 Update `npm` to version 16.x and above, it's necessary for running the react template.
+Navigate to `game-ranking.cient` to run these commands.
 
 - `npm create vite@latest` To fetch react template, we can use command. And choose `TypeScript` variant.
 - `npm run dev` to test out native web app.
 
-## Expanding the ESLint configuration
+### Server
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Navigate to `game-ranking.Server` to run these commands.
 
-- Configure the top-level `parserOptions` property like this:
+- `dotnet run` to start the server.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+## Third Party Libraries
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Bootstrap v5.3.3](https://getbootstrap.com/)
+
+## Credit
+
+[Ranking App](https://github.com/GavinLonDigital/RankingApp) by [Garvin Lon](https://github.com/GavinLonDigital)
