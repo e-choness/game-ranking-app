@@ -9,11 +9,15 @@ This is a game ranking app based on React JS. A hobby and a code along project o
 ### Client
 
 Update `npm` to version 16.x and above, it's necessary for running the react template.
+
 Navigate to `game-ranking.cient` to run these commands.
 
-- `npm run dev` to test out native web app.
+- `npm install`: install dependencies before running the front-end.
+- `npm run dev`: test out native web app.
 
 ### Server
+
+Install .NET 6 and ASP.NET framework, they can be found in [Visual Studio Installer](https://visualstudio.microsoft.com/downloads/).
 
 Navigate to `game-ranking.Server` to run these commands.
 
