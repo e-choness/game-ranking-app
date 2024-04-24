@@ -8,7 +8,7 @@ const RankItems = () => {
   const [items, setItems] = useState([]);
   const dataType = 1;
 
-  const [reload, setReload] = useState(false);
+  const [reload, setReload] = useState(true);
 
   const localStorageKey = "rpg";
 
